@@ -5,12 +5,11 @@ import java.util.Optional;
 
 import com.ventas.ventas.model.Cliente;
 import com.ventas.ventas.repository.IClienteRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ClienteService implements IClienteService {
+public class ClienteService implements ICRUDService<Cliente> {
 
     @Autowired
     private IClienteRepository oIClienteRepository;
@@ -39,5 +38,4 @@ public class ClienteService implements IClienteService {
     public void delete(Integer id) {
         oIClienteRepository.deleteById(id);
     }
-
 }
